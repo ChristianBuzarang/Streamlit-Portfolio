@@ -8,21 +8,6 @@ st.set_page_config(
     layout="wide",
 )
 
-st.markdown(
-    """
-    <style>
-    /* Style the image zoom modal background and image preview */
-    div[data-baseweb="modal"] {
-        background-color: rgba(14, 17, 23, 0.85) !important;
-    }
-    div[data-baseweb="modal"] img {
-        border-radius: 12px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-    }
-    </style>
-""",
-    unsafe_allow_html=True,
-)
 
 # Sidebar Navigation
 with st.sidebar:
