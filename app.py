@@ -40,7 +40,7 @@ st.markdown(
 
 # Sidebar Navigation
 with st.sidebar:
-    st.image("my_picture.heic", width=120)
+    st.image("my_picture.png", width=120)
     st.title("Christian V. Buzarang")
     st.caption("BS Computer Science • CIT-U")
     st.markdown("---")
