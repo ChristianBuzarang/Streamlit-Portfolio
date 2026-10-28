@@ -8,65 +8,6 @@ st.set_page_config(
     layout="wide",
 )
 
-# Custom CSS Styling for Widgets and Highlighters
-st.markdown(
-    """
-    <style>
-    /* Base Portfolio Layout Styles */
-    .main {
-        background-color: #0e1117;
-        color: #ffffff;
-    }
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 24px;
-    }
-    .stTabs [data-baseweb="tab"] {
-        height: 50px;
-        white-space: pre-wrap;
-        background-color: #161b22;
-        border-radius: 8px;
-        color: #c9d1d9;
-        font-weight: 600;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    /* Theme Overrides such as Radio, Slider, Checkbox, & Tabs */
-
-    /* Active Radio Button Dot */
-    div[data-baseweb="radio"] input:checked ~ div:first-child {
-        background-color: #00ffff !important;
-        border-color: #00ffff !important;
-    }
-
-    /* Slider Handle / Thumb */
-    div[data-baseweb="slider"] div[role="slider"] {
-        background-color: #00ffff !important;
-        border-color: #00ffff !important;
-    }
-
-    /* Slider Progress Bar Fill */
-    div[data-baseweb="slider"] div[data-testid="stThumbValue"] ~ div div,
-    div[data-baseweb="slider"] div[style*="background-color"] {
-        background-color: #00ffff !important;
-    }
-
-    /* Checkbox Checked Box */
-    div[data-baseweb="checkbox"] input:checked ~ div {
-        background-color: #ff00ff !important;
-        border-color: #ff00ff !important;
-    }
-
-    /* Active Selected Tab */
-    .stTabs [aria-selected="true"] {
-        background-color: #ff00ff !important;
-        color: white !important;
-    }
-    </style>
-""",
-    unsafe_allow_html=True,
-)
-
 # Sidebar Navigation
 with st.sidebar:
     st.image("my_picture.png", width=240)
@@ -209,7 +150,7 @@ elif menu == "Skills & Analytics":
     st.markdown("---")
     st.subheader("Interactive Skill Threshold Analyzer")
     selected_tech = st.select_slider(
-        "Select minimum proficiency threshold:", options=[0, 25, 50, 75, 100]
+        "Select minimum proficiency threshold:", options=[i for i in range(0, 101)]
     )
     matched_tech = df_skills[df_skills["Proficiency (%)"] >= selected_tech][
         "Technology"
