@@ -209,7 +209,7 @@ Developed by MoyveTeam from Cebu Institute of Technology - University for the NE
         )
 
     with tab_p4:
-        st.subheader("BitFlipBlazor")
+        st.subheader("Bit Flip Academy")
         st.markdown("**Role:** Full-Stack Web Developer")
         st.write("""
         A full-stack web application built using C# .NET Blazor and MySQL, featuring responsive component architecture and secure database connectivity.
