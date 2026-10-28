@@ -168,7 +168,7 @@ elif menu == "Projects":
     )
 
     tab_p1, tab_p2, tab_p3, tab_p4 = st.tabs(
-        ["GymQuest", "Project Ascend", "Se Cognos Chess", "BitFlipBlazor"]
+        ["GymQuest", "Project Ascend", "Se Cognos Chess", "BitFlip Academy"]
     )
 
     with tab_p1:
@@ -209,14 +209,14 @@ Developed by MoyveTeam from Cebu Institute of Technology - University for the NE
         )
 
     with tab_p4:
-        st.subheader("Bit Flip Academy")
+        st.subheader("BitFlip Academy")
         st.markdown("**Role:** Full-Stack Web Developer")
         st.write("""
         A full-stack web application built using C# .NET Blazor and MySQL, featuring responsive component architecture and secure database connectivity.
         """)
         st.caption("Tools: C#, .NET Blazor, MySQL, Entity Framework")
         st.markdown(
-            "[View BitFlipBlazor GitHub Repository](https://github.com/ChristianBuzarang/BitFlipAcademy)"
+            "[View BitFlip Academy GitHub Repository](https://github.com/ChristianBuzarang/BitFlipAcademy)"
         )
 
 # Contact & Feedback Form Section
