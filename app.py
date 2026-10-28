@@ -8,17 +8,25 @@ st.set_page_config(
     layout="wide",
 )
 
+st.markdown(
+    """
+    <style>
+    /* Style the image zoom modal background and image preview */
+    div[data-baseweb="modal"] {
+        background-color: rgba(14, 17, 23, 0.85) !important;
+    }
+    div[data-baseweb="modal"] img {
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+    </style>
+""",
+    unsafe_allow_html=True,
+)
+
 # Sidebar Navigation
 with st.sidebar:
-    # st.image("static/my_picture.png", width=240)
-    st.markdown(
-        """
-        <div style="text-align: center;">
-            <img src="static/my_picture.png" width="240" style="border-radius: 8px;">
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+    st.image("static/my_picture.png", width=240)
     st.title("Christian V. Buzarang")
     st.caption("BS Computer Science • CIT-U")
     st.markdown("---")
