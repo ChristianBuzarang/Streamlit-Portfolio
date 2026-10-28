@@ -8,10 +8,11 @@ st.set_page_config(
     layout="wide",
 )
 
-# Custom CSS Styling
+# Custom CSS Styling for Widgets and Highlighters
 st.markdown(
     """
     <style>
+    /* Base Portfolio Layout Styles */
     .main {
         background-color: #0e1117;
         color: #ffffff;
@@ -29,8 +30,36 @@ st.markdown(
         padding-left: 20px;
         padding-right: 20px;
     }
+
+    /* Theme Overrides such as Radio, Slider, Checkbox, & Tabs */
+
+    /* Active Radio Button Dot */
+    div[data-baseweb="radio"] input:checked ~ div:first-child {
+        background-color: #00ffff !important;
+        border-color: #00ffff !important;
+    }
+
+    /* Slider Handle / Thumb */
+    div[data-baseweb="slider"] div[role="slider"] {
+        background-color: #00ffff !important;
+        border-color: #00ffff !important;
+    }
+
+    /* Slider Progress Bar Fill */
+    div[data-baseweb="slider"] div[data-testid="stThumbValue"] ~ div div,
+    div[data-baseweb="slider"] div[style*="background-color"] {
+        background-color: #00ffff !important;
+    }
+
+    /* Checkbox Checked Box */
+    div[data-baseweb="checkbox"] input:checked ~ div {
+        background-color: #ff00ff !important;
+        border-color: #ff00ff !important;
+    }
+
+    /* Active Selected Tab */
     .stTabs [aria-selected="true"] {
-        background-color: #238636 !important;
+        background-color: #ff00ff !important;
         color: white !important;
     }
     </style>
@@ -40,7 +69,7 @@ st.markdown(
 
 # Sidebar Navigation
 with st.sidebar:
-    st.image("my_picture.png", width=120)
+    st.image("my_picture.png", width=240)
     st.title("Christian V. Buzarang")
     st.caption("BS Computer Science • CIT-U")
     st.markdown("---")
@@ -59,9 +88,10 @@ with st.sidebar:
 
     st.markdown("---")
     st.markdown("**Course:** CS365 Applied AI")
+    st.markdown("**Section:** F2")
     st.markdown("**Location:** Cebu, Philippines")
 
-# 1. ABOUT ME SECTION
+# About Me section
 if menu == "About Me":
     st.title("Welcome to My Portfolio")
     st.markdown("### Aspiring Software Engineer & Game Developer")
@@ -85,7 +115,7 @@ if menu == "About Me":
             "💡 **Quick Facts**\n\n- 📍 Based in Lapu-Lapu City, Cebu\n- 🎮 Godot indie game developer\n- 📊 Data analytics & QA focus"
         )
 
-# 2. AUTOBIOGRAPHY & MILESTONES SECTION
+# Autobiography & Milestones Section
 elif menu == "Autobiography & Milestones":
     st.title("Autobiography & Journey")
 
@@ -119,7 +149,7 @@ elif menu == "Autobiography & Milestones":
             "🏆 **Hackathons & Challenges** — Active participant in regional technical challenges including the NEXT LEVEL Esports Game Dev Challenge (MoyveTeam)."
         )
 
-# 3. SKILLS & ANALYTICS SECTION
+# Skills & Analytics Section
 elif menu == "Skills & Analytics":
     st.title("Technical Proficiency & Analytics")
     st.write(
@@ -179,7 +209,7 @@ elif menu == "Skills & Analytics":
     st.markdown("---")
     st.subheader("Interactive Skill Threshold Analyzer")
     selected_tech = st.select_slider(
-        "Select minimum proficiency threshold:", options=[70, 75, 80, 85, 90, 95]
+        "Select minimum proficiency threshold:", options=[0, 25, 50, 75, 100]
     )
     matched_tech = df_skills[df_skills["Proficiency (%)"] >= selected_tech][
         "Technology"
@@ -188,7 +218,7 @@ elif menu == "Skills & Analytics":
         f"Technologies with proficiency $\\ge$ {selected_tech}%: **{', '.join(matched_tech) if matched_tech else 'None'}**"
     )
 
-# 4. PROJECTS SECTION (At least 3 projects required)
+# Projects Section
 elif menu == "Projects":
     st.title("Featured Projects")
     st.write(
@@ -208,6 +238,9 @@ elif menu == "Projects":
 The system provides a centralized platform for admins, trainers, and members to seamlessly interact. By offering structured session bookings, customizable workout tracking, and an interactive community space, GymQuest transforms standard gym management into a collaborative, highly responsive fitness management experience.
         """)
         st.caption("Tools: Java, JavaFX, FXML, CSS, MySQL")
+        st.markdown(
+            "[View GymQuest GitHub Repository](https://github.com/ChristianBuzarang/GymQuest)"
+        )
 
     with tab_p2:
         st.subheader("Project Ascend")
@@ -216,6 +249,9 @@ The system provides a centralized platform for admins, trainers, and members to 
         An enterprise resilience and stress inoculation platform that integrates biometric data visualization with machine learning classification pipelines to monitor and assess user stress levels.
         """)
         st.caption("Tools: Python, Scikit-Learn, Pandas, Machine Learning")
+        st.markdown(
+            "[View Project Ascend GitHub Repository](https://github.com/ChristianBuzarang/Project-Ascenso)"
+        )
 
     with tab_p3:
         st.subheader("Se Cognos Chess")
@@ -226,6 +262,9 @@ The system provides a centralized platform for admins, trainers, and members to 
 Developed by MoyveTeam from Cebu Institute of Technology - University for the NEXT LEVEL: ESPORTS GAME DEV CHALLENGE 2026.
         """)
         st.caption("Tools: Godot Engine, GDScript, Blender, Custom Shaders")
+        st.markdown(
+            "[View Se Cognos Chess GitHub Repository](https://github.com/ChristianBuzarang/Se-Cognos-Chess)"
+        )
 
     with tab_p4:
         st.subheader("BitFlipBlazor")
@@ -234,8 +273,11 @@ Developed by MoyveTeam from Cebu Institute of Technology - University for the NE
         A full-stack web application built using C# .NET Blazor and MySQL, featuring responsive component architecture and secure database connectivity.
         """)
         st.caption("Tools: C#, .NET Blazor, MySQL, Entity Framework")
+        st.markdown(
+            "[View BitFlipBlazor GitHub Repository](https://github.com/ChristianBuzarang/BitFlipAcademy)"
+        )
 
-# 5. CONTACT & FEEDBACK FORM SECTION
+# Contact & Feedback Form Section
 elif menu == "Contact & Feedback":
     st.title("Contact & Feedback Form")
     st.write(
