@@ -5,7 +5,6 @@ import numpy as np
 # Page Configuration
 st.set_page_config(
     page_title="Christian Buzarang | Portfolio",
-    page_icon="💻",
     layout="wide",
 )
 
@@ -41,9 +40,7 @@ st.markdown(
 
 # Sidebar Navigation
 with st.sidebar:
-    st.image(
-        "https://api.dicebear.com/7.x/bottts/svg?seed=ChristianBuzarang", width=120
-    )
+    st.image("my_picture.heic", width=120)
     st.title("Christian V. Buzarang")
     st.caption("BS Computer Science • CIT-U")
     st.markdown("---")
@@ -61,36 +58,36 @@ with st.sidebar:
     )
 
     st.markdown("---")
-    st.markdown("**Course:** CSIT 349 Applied AI")
+    st.markdown("**Course:** CS365 Applied AI")
     st.markdown("**Location:** Cebu, Philippines")
 
 # 1. ABOUT ME SECTION
 if menu == "About Me":
-    st.title("👋 Welcome to My Portfolio")
+    st.title("Welcome to My Portfolio")
     st.markdown("### Aspiring Software Engineer & Game Developer")
 
     col1, col2 = st.columns([2, 1])
     with col1:
         st.write("""
-        Hello! I'm **Christian Villases Buzarang**, a dedicated Bachelor of Science in Computer Science student at **Cebu Institute of Technology - University (CIT-U)** in Cebu, Philippines. 
+        Hello! I'm **Christian V. Buzarang**, a dedicated Bachelor of Science in Computer Science student at **Cebu Institute of Technology - University (CIT-U)** in Cebu, Philippines. 
         
-        My passion lies at the intersection of full-stack software development, machine learning applications, and immersive 3D indie game development using the Godot Engine. I thrive in terminal-driven Linux environments, favoring clean code architecture, robust backend logic, and interactive user experiences.
+        My passion lies at the intersection of software development, machine learning applications, and indie game development using Godot Engine. I thrive in terminal-driven Linux environments, favoring clean code architecture, robust backend logic, and interactive user experiences.
         """)
 
         # Metrics Extra Component
         m1, m2, m3 = st.columns(3)
-        m1.metric("Tech Stacks", "10+", "Core Languages")
+        m1.metric("Tech Stacks", "5+", "Core Languages")
         m2.metric("Major Projects", "4 Built", "Active Dev")
         m3.metric("Scholarship", "DOST-SEI", "S&T Scholar")
 
     with col2:
         st.info(
-            "💡 **Quick Facts**\n\n- 📍 Based in Lapu-Lapu City, Cebu\n- ⚙️ Linux / Neovim workflow\n- 🎮 Godot indie game developer\n- 📊 Data analytics & QA focus"
+            "💡 **Quick Facts**\n\n- 📍 Based in Lapu-Lapu City, Cebu\n- 🎮 Godot indie game developer\n- 📊 Data analytics & QA focus"
         )
 
 # 2. AUTOBIOGRAPHY & MILESTONES SECTION
 elif menu == "Autobiography & Milestones":
-    st.title("📖 Autobiography & Journey")
+    st.title("Autobiography & Journey")
 
     tab1, tab2, tab3 = st.tabs(
         ["Background", "Education & Philosophy", "Key Milestones"]
@@ -99,7 +96,7 @@ elif menu == "Autobiography & Milestones":
     with tab1:
         st.subheader("Roots & Passion")
         st.write("""
-        Growing up in Cebu, Philippines, technology has always been a medium for creative problem-solving. From early curiosity about how operating systems and software work under the hood to building complex desktop and web applications, my journey in computer science has been driven by a constant desire to build functional, elegant, and high-performance systems.
+        Growing up in Lapu-Lapu City, Cebu, Philippines, technology has always been a medium for creative problem-solving. From early curiosity about how software and games work under the hood to building complex desktop and web applications, my journey in computer science has been driven by a constant desire to build functional, elegant, high-performance systems and fun.
         """)
 
     with tab2:
@@ -119,12 +116,12 @@ elif menu == "Autobiography & Milestones":
             "🚀 **GEAR Program Invitation** — Accepted into the selective GEAR program focusing on artificial intelligence, technical project management, and software development."
         )
         st.success(
-            "🏆 **Hackathons & Challenges** — Active participant in regional technical challenges including the NEXT LEVEL Esports Game Dev Challenge (MoyveTeam) and AIRA Youth Challenge."
+            "🏆 **Hackathons & Challenges** — Active participant in regional technical challenges including the NEXT LEVEL Esports Game Dev Challenge (MoyveTeam)."
         )
 
 # 3. SKILLS & ANALYTICS SECTION
 elif menu == "Skills & Analytics":
-    st.title("🛠️ Technical Proficiency & Analytics")
+    st.title("Technical Proficiency & Analytics")
     st.write(
         "Explore my technical stack breakdown across systems programming, web development, and game engineering."
     )
@@ -132,7 +129,7 @@ elif menu == "Skills & Analytics":
     # Interactive widgets
     skill_category = st.selectbox(
         "Filter skill proficiency by domain:",
-        ["All Domains", "Languages", "Frameworks & Engines", "Tools & Environments"],
+        ["All Domains", "Languages", "Frameworks & Engines"],
     )
 
     skills_data = {
@@ -143,7 +140,6 @@ elif menu == "Skills & Analytics":
             "C# (.NET / Blazor)",
             "PHP & SQL",
             "GDScript (Godot)",
-            "Git & Linux",
         ],
         "Domain": [
             "Languages",
@@ -152,17 +148,15 @@ elif menu == "Skills & Analytics":
             "Frameworks & Engines",
             "Databases & Web",
             "Frameworks & Engines",
-            "Tools & Environments",
         ],
-        "Proficiency (%)": [90, 85, 88, 82, 80, 92, 95],
+        "Proficiency (%)": [45, 75, 75, 50, 70, 65],
         "Experience Level": [
-            "Advanced",
-            "Advanced",
-            "Advanced",
+            "Beginner",
             "Intermediate",
             "Intermediate",
-            "Advanced",
-            "Expert",
+            "Beginner",
+            "Intermediate",
+            "Intermediate",
         ],
     }
     df_skills = pd.DataFrame(skills_data)
@@ -196,25 +190,27 @@ elif menu == "Skills & Analytics":
 
 # 4. PROJECTS SECTION (At least 3 projects required)
 elif menu == "Projects":
-    st.title("🚀 Featured Projects")
+    st.title("Featured Projects")
     st.write(
-        "Here are four major projects showcasing my work across desktop apps, enterprise platforms, game development, and full-stack web systems."
+        "Here are four major projects showcasing my work across desktop apps, enterprise platforms, game development, and web systems."
     )
 
     tab_p1, tab_p2, tab_p3, tab_p4 = st.tabs(
-        ["GymQuest", "Project Ascend", "COLON", "BitFlipBlazor"]
+        ["GymQuest", "Project Ascend", "Se Cognos Chess", "BitFlipBlazor"]
     )
 
     with tab_p1:
-        st.subheader("🏋️ GymQuest")
+        st.subheader("GymQuest")
         st.markdown("**Role:** Lead Developer & Architect")
         st.write("""
-        A robust JavaFX desktop application designed for gym membership and business management. Features custom dark-mode CSS styling, FXML container layouts, and relational database integration for member tracking and billing.
+        GymQuest is a Java-based desktop program designed to address low member retention and heavy administrative overhead in standard fitness centers. While most systems focus solely on basic record-keeping and labor-intensive workflows, GymQuest bridges the gap between management and motivation.
+
+The system provides a centralized platform for admins, trainers, and members to seamlessly interact. By offering structured session bookings, customizable workout tracking, and an interactive community space, GymQuest transforms standard gym management into a collaborative, highly responsive fitness management experience.
         """)
         st.caption("Tools: Java, JavaFX, FXML, CSS, MySQL")
 
     with tab_p2:
-        st.subheader("🛡️ Project Ascend")
+        st.subheader("Project Ascend")
         st.markdown("**Role:** Full-Stack & ML Integration Lead")
         st.write("""
         An enterprise resilience and stress inoculation platform that integrates biometric data visualization with machine learning classification pipelines to monitor and assess user stress levels.
@@ -222,15 +218,17 @@ elif menu == "Projects":
         st.caption("Tools: Python, Scikit-Learn, Pandas, Machine Learning")
 
     with tab_p3:
-        st.subheader("👻 COLON (3D Horror Game)")
-        st.markdown("**Role:** Game Developer & Designer")
+        st.subheader("Se Cognos Chess")
+        st.markdown("**Role:** Project Manager & Game Developer")
         st.write("""
-        A 3D first-person psychological horror game set in Colon, Cebu during a city-wide power outage. Built using custom shaders, state machine architectures, and pixel-art asset pipelines in Godot Engine.
+        Se Cognos Chess (Latin for "Know Thyself") is a psychological, cyberpunk strategy game that completely deconstructs the world’s oldest board game. Built from the ground up in Godot 4, it transforms traditional chess into a fast-paced, highly tactical esports and arcade experience.
+
+Developed by MoyveTeam from Cebu Institute of Technology - University for the NEXT LEVEL: ESPORTS GAME DEV CHALLENGE 2026.
         """)
         st.caption("Tools: Godot Engine, GDScript, Blender, Custom Shaders")
 
     with tab_p4:
-        st.subheader("⚡ BitFlipBlazor")
+        st.subheader("BitFlipBlazor")
         st.markdown("**Role:** Full-Stack Web Developer")
         st.write("""
         A full-stack web application built using C# .NET Blazor and MySQL, featuring responsive component architecture and secure database connectivity.
@@ -239,7 +237,7 @@ elif menu == "Projects":
 
 # 5. CONTACT & FEEDBACK FORM SECTION
 elif menu == "Contact & Feedback":
-    st.title("📬 Contact & Feedback Form")
+    st.title("Contact & Feedback Form")
     st.write(
         "Have a question, collaboration proposal, or feedback on this app? Drop a message below!"
     )
