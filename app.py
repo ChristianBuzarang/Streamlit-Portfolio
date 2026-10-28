@@ -10,7 +10,15 @@ st.set_page_config(
 
 # Sidebar Navigation
 with st.sidebar:
-    st.image("my_picture.png", width=240)
+    # st.image("Images/my_picture.png", width=240)
+    st.markdown(
+        """
+        <div style="text-align: center;">
+            <img src="Images/my_picture.png" width="240" style="border-radius: 8px;">
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
     st.title("Christian V. Buzarang")
     st.caption("BS Computer Science • CIT-U")
     st.markdown("---")
